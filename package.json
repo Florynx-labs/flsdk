@@ -1,9 +1,9 @@
 {
   "name": "@florynxlabs/farmlink-sdk",
-   "publishConfig": {
+  "publishConfig": {
     "access": "public"
   },
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Official FarmLink SDK for Node.js - Access FarmLink API with ease",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -79,6 +79,5 @@
     "typescript": {
       "optional": true
     }
-
   }
 }
