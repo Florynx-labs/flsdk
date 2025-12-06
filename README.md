@@ -2,7 +2,7 @@
 
 Official Node.js SDK for the FarmLink API - The intelligent agricultural management platform.
 
-[![npm version](https://badge.fury.io/js/farmlink-sdk.svg)](https://www.npmjs.com/package/farmlink-sdk)
+[![npm version](https://badge.fury.io/js/farmlink-sdk.svg)](https://www.npmjs.com/package/@florynxlabs/farmlink-sdk)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Installation
