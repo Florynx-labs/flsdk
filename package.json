@@ -1,0 +1,84 @@
+{
+  "name": "@florynxlabs/farmlink-sdk",
+   "publishConfig": {
+    "access": "public"
+  },
+  "version": "1.0.1",
+  "description": "Official FarmLink SDK for Node.js - Access FarmLink API with ease",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src/",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "farmlink",
+    "agriculture",
+    "farming",
+    "api",
+    "sdk",
+    "oauth",
+    "agritech",
+    "farm-management",
+    "crops",
+    "inventory",
+    "nodejs",
+    "typescript"
+  ],
+  "author": {
+    "name": "Florynx Labs",
+    "email": "contact@florynxlabs.com",
+    "url": "https://florynxlabs.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Florynx-labs/farmlink-sdk.git"
+  },
+  "homepage": "https://github.com/Florynx-labs/farmlink-sdk#readme",
+  "bugs": {
+    "url": "https://github.com/Florynx-labs/farmlink-sdk/issues"
+  },
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/Florynx-labs"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.2",
+    "vitest": "^1.0.0"
+  },
+  "peerDependencies": {
+    "typescript": ">=4.7.0"
+  },
+  "peerDependenciesMeta": {
+    "typescript": {
+      "optional": true
+    }
+
+  }
+}
