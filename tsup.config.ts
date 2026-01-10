@@ -1,7 +1,7 @@
 import { defineConfig } from 'tsup'
 
 export default defineConfig({
-  entry: ['src/index.ts'],
+  entry: ['src/index.ts', 'src/plugins/better-auth.ts'],
   format: ['cjs', 'esm'],
   dts: true,
   clean: true,
@@ -15,7 +15,7 @@ export default defineConfig({
   noExternal: [],
   esbuildOptions(options) {
     options.banner = {
-      js: '/**\n * FarmLink SDK v1.0.0\n * (c) 2024 Florynx Labs\n * @license MIT\n */',
+      js: '/**\n * FarmLink SDK v2.0.0\n * (c) 2026 Florynx Labs\n * @license MIT\n */',
     }
   },
 })

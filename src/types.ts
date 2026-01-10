@@ -9,7 +9,7 @@ export interface FarmLinkConfig {
   apiKey?: string
   /** OAuth Access Token */
   accessToken?: string
-  /** Base URL for the API (default: https://farmlink.com) */
+  /** Base URL for the API (default: https://farmlinkmali.com) */
   baseUrl?: string
   /** Request timeout in milliseconds (default: 30000) */
   timeout?: number
@@ -51,6 +51,7 @@ export interface User {
   email: string
   emailVerified: boolean
   image?: string
+  avatar?: string // Preferred over 'image'
   role: 'USER' | 'ADMIN'
   createdAt: string
   updatedAt: string
@@ -80,7 +81,7 @@ export interface CreateFermeInput {
   longitude?: number
 }
 
-export interface UpdateFermeInput extends Partial<CreateFermeInput> {}
+export interface UpdateFermeInput extends Partial<CreateFermeInput> { }
 
 // ============ Parcelle ============
 
@@ -104,7 +105,7 @@ export interface CreateParcelleInput {
   fermeId?: string
 }
 
-export interface UpdateParcelleInput extends Partial<CreateParcelleInput> {}
+export interface UpdateParcelleInput extends Partial<CreateParcelleInput> { }
 
 // ============ Culture ============
 
@@ -138,7 +139,7 @@ export interface CreateCultureInput {
   parcelleId: string
 }
 
-export interface UpdateCultureInput extends Partial<CreateCultureInput> {}
+export interface UpdateCultureInput extends Partial<CreateCultureInput> { }
 
 // ============ Budget / Transactions ============
 
@@ -180,7 +181,7 @@ export interface CreateTransactionInput {
   date?: string
 }
 
-export interface UpdateTransactionInput extends Partial<CreateTransactionInput> {}
+export interface UpdateTransactionInput extends Partial<CreateTransactionInput> { }
 
 // ============ Inventaire ============
 
@@ -221,7 +222,7 @@ export interface CreateInventoryInput {
   notes?: string
 }
 
-export interface UpdateInventoryInput extends Partial<CreateInventoryInput> {}
+export interface UpdateInventoryInput extends Partial<CreateInventoryInput> { }
 
 // ============ Query Parameters ============
 
@@ -248,4 +249,37 @@ export interface TransactionListParams extends ListParams {
 export interface InventoryListParams extends ListParams {
   categorie?: InventoryCategory
   lowStock?: boolean
+}
+
+// ============ Analytics ============
+
+export interface DashboardStats {
+  totalFermes: number
+  totalParcelles: number
+  totalCulturesActive: number
+  totalTransactions: number
+  revenuTotal: number
+  depenseTotal: number
+  [key: string]: unknown
+}
+
+// ============ Marketplace ============
+
+export interface MarketplaceAd {
+  id: string
+  titre: string
+  description: string
+  prix: number
+  unite: string
+  image?: string
+  statut: 'ACTIVE' | 'VENDU' | 'ANNULE'
+  userId: string
+  createdAt: string
+  updatedAt: string
+  [key: string]: unknown
+}
+
+export interface MarketplaceListParams extends ListParams {
+  statut?: 'ACTIVE' | 'VENDU' | 'ANNULE'
+  q?: string
 }

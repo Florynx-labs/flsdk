@@ -3,7 +3,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "1.0.2",
+  "version": "2.0.0",
   "description": "Official FarmLink SDK for Node.js - Access FarmLink API with ease",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -13,6 +13,11 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/index.mjs",
       "require": "./dist/index.js"
+    },
+    "./plugins": {
+      "types": "./dist/plugins/better-auth.d.ts",
+      "import": "./dist/plugins/better-auth.mjs",
+      "require": "./dist/plugins/better-auth.js"
     }
   },
   "sideEffects": false,
@@ -46,9 +51,9 @@
     "typescript"
   ],
   "author": {
-    "name": "Florynx Labs",
-    "email": "contact@florynxlabs.com",
-    "url": "https://florynxlabs.com"
+    "name": "Farmlink Mali",
+    "email": "contact@farmlinkmali.com",
+    "url": "https://farmlinkmali.com"
   },
   "license": "MIT",
   "repository": {
@@ -61,7 +66,7 @@
   },
   "funding": {
     "type": "github",
-    "url": "https://github.com/sponsors/Florynx-labs"
+    "url": "https://github.com/sponsors/farmlinkmali"
   },
   "engines": {
     "node": ">=16.0.0"

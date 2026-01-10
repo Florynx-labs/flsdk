@@ -1,8 +1,8 @@
-# FarmLink SDK
+# FarmLink SDK v2
 
-Official Node.js SDK for the FarmLink API - The intelligent agricultural management platform.
+Official Node.js SDK for the [FarmLink](https://farmlinkmali.com) API - The intelligent agricultural management platform for Mali.
 
-[![npm version](https://badge.fury.io/js/farmlink-sdk.svg)](https://www.npmjs.com/package/@florynxlabs/farmlink-sdk)
+[![npm version](https://badge.fury.io/js/farmlinkmali-sdk.svg)](https://www.npmjs.com/package/@florynxlabs/farmlink-sdk)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Installation
@@ -43,7 +43,7 @@ console.log(`You have ${cultures.length} cultures`);
 
 ### API Key
 
-Get your API Key from [FarmLink Dashboard](https://farmlink.com/dashboard/parametres) → Developer → API Keys.
+Get your API Key from [FarmLink Dashboard](https://farmlinkmali.com/dashboard/settings) → Developer → API Keys.
 
 ```typescript
 const farmlink = new FarmLinkClient({
@@ -71,12 +71,30 @@ const farmlink = new FarmLinkClient({
   accessToken: 'fla_xxxxxxxxxxxxxxxx',
 
   // Optional
-  baseUrl: 'https://farmlink.com',  // Default
-  timeout: 30000,                    // 30 seconds
-  debug: false,                      // Enable debug logging
-  headers: {                         // Custom headers
+  baseUrl: 'https://farmlinkmali.com', // Default
+  timeout: 30000,                      // 30 seconds
+  debug: false,                        // Enable debug logging
+  headers: {                           // Custom headers
     'X-Custom-Header': 'value'
   }
+});
+```
+
+## Better Auth Integration (v2+)
+
+FarmLink SDK v2 includes a dedicated plugin for [Better Auth](https://better-auth.com).
+
+```typescript
+import { betterAuth } from "better-auth";
+import { farmlinkProvider } from "@florynxlabs/farmlink-sdk/plugins";
+
+export const auth = betterAuth({
+  plugins: [
+    farmlinkProvider({
+      clientId: process.env.FARMLINK_CLIENT_ID,
+      clientSecret: process.env.FARMLINK_CLIENT_SECRET,
+    })
+  ]
 });
 ```
 
@@ -249,6 +267,26 @@ await farmlink.inventory.update('item_id', {
 await farmlink.inventory.delete('item_id');
 ```
 
+### Marketplace (v2+)
+
+```typescript
+// List marketplace ads
+const { data: ads } = await farmlink.marketplace.listAds({
+  statut: 'ACTIVE'
+});
+
+// Get ad details
+const ad = await farmlink.marketplace.getAd('ad_id');
+```
+
+### Analytics (v2+)
+
+```typescript
+// Get global stats
+const stats = await farmlink.analytics.getStats();
+console.log(`Total Farms: ${stats.totalFermes}`);
+```
+
 ## Error Handling
 
 ```typescript
@@ -321,16 +359,16 @@ const farmlink = new FarmLinkClient({
   debug: true
 });
 
-// Logs: [FarmLink SDK] GET https://farmlink.com/api/v1/cultures
+// Logs: [FarmLink SDK] GET https://farmlinkmali.com/api/v1/cultures
 ```
 
 ## Links
 
-- [FarmLink Website](https://farmlink.com)
-- [API Documentation](https://farmlink.com/docs/api)
-- [OAuth Guide](https://farmlink.com/docs/authentication)
-- [GitHub Repository](https://github.com/farmlink/farmlink-sdk)
+- [FarmLink Website](https://farmlinkmali.com)
+- [API Documentation](https://farmlinkmali.com/docs/api)
+- [OAuth Guide](https://farmlinkmali.com/docs/authentication)
+- [GitHub Repository](https://github.com/@florynxlabs/farmlink-sdk)
 
 ## License
 
-MIT © [Florynx Labs](https://florynxlabs.com)
+MIT © [Farmlink Mali](https://farmlinkmali.com)

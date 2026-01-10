@@ -10,10 +10,10 @@
 export { FarmLinkClient } from './client'
 
 // Error classes
-export { 
-  FarmLinkError, 
-  AuthenticationError, 
-  RateLimitError, 
+export {
+  FarmLinkError,
+  AuthenticationError,
+  RateLimitError,
   ValidationError,
   NotFoundError,
   ForbiddenError,
@@ -26,44 +26,51 @@ export type {
   ApiResponse,
   PaginatedResponse,
   ApiError,
-  
+
   // User
   User,
-  
+
   // Ferme
   Ferme,
   CreateFermeInput,
   UpdateFermeInput,
-  
+
   // Parcelle
   Parcelle,
   CreateParcelleInput,
   UpdateParcelleInput,
-  
+
   // Culture
   Culture,
   CultureStatut,
   CreateCultureInput,
   UpdateCultureInput,
-  
+
   // Transaction
   Transaction,
   TransactionType,
   TransactionCategory,
   CreateTransactionInput,
   UpdateTransactionInput,
-  
+
   // Inventory
   InventoryItem,
   InventoryCategory,
   CreateInventoryInput,
   UpdateInventoryInput,
-  
+
   // Query params
   ListParams,
   CultureListParams,
   TransactionListParams,
   InventoryListParams,
+
+  // Analytics
+  DashboardStats,
+
+  // Marketplace
+  MarketplaceAd,
+  MarketplaceListParams,
 } from './types'
 
 // Default export
